@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CTF Learning Platform - Professional Capture The Flag challenge platform"
+    />
+    <title>CTF Platform - Learn and Practice Security</title>
+
+    <!-- Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/challenges.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- Skip to main content link (accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav class="top-nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-container">
+        <!-- Left: Logo & Main Nav -->
+        <div class="nav-left">
+          <a href="#" class="logo" aria-label="CTF Platform Home">
+            <div class="logo-icon">
+              <i class="fas fa-flag"></i>
+            </div>
+            <span class="logo-text">CTF Platform</span>
+          </a>
+          <div class="nav-links">
+            <a href="#learn" class="nav-link">Learn</a>
+            <a href="#practice" class="nav-link active">Practice</a>
+            <a href="#compete" class="nav-link">Compete</a>
+            <a href="#classrooms" class="nav-link">Classrooms</a>
+          </div>
+        </div>
+
+        <!-- Right: User & Controls -->
+        <div class="nav-right">
+          <button
+            class="notification-btn"
+            aria-label="Notifications"
+            title="Notifications"
+          >
+            <i class="fas fa-bell"></i>
+            <span class="badge" aria-label="3 notifications">3</span>
+          </button>
+          <div class="user-menu">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%2358a6ff'/%3E%3Ccircle cx='50' cy='35' r='20' fill='%230d1117'/%3E%3Cellipse cx='50' cy='80' rx='30' ry='25' fill='%230d1117'/%3E%3C/svg%3E"
+              alt="User avatar"
+              class="avatar"
+            />
+            <span class="user-name">Student</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SECONDARY NAVIGATION -->
+    <div
+      class="secondary-nav"
+      role="navigation"
+      aria-label="Section navigation"
+    >
+      <div class="container">
+        <a href="#challenges" class="tab active" data-tab="challenges">
+          <i class="fas fa-puzzle-piece"></i>
+          <span>Challenges</span>
+        </a>
+        <a href="#playlists" class="tab" data-tab="playlists">
+          <i class="fas fa-list"></i>
+          <span>Playlists</span>
+        </a>
+        <a href="#assignments" class="tab" data-tab="assignments">
+          <i class="fas fa-tasks"></i>
+          <span>Assignments</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content" id="main-content" role="main">
+      <!-- FILTER SIDEBAR -->
+      <aside class="filter-sidebar" role="region" aria-label="Filters">
+        <div class="sidebar-header">
+          <h3>Filters</h3>
+          <button class="clear-filters" aria-label="Clear all filters">
+            Clear All
+          </button>
+        </div>
+
+        <!-- Search -->
+        <div class="filter-section">
+          <label for="search-input">Search by Name</label>
+          <div class="search-box">
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search challenges..."
+              aria-label="Search challenges"
+            />
+            <button class="search-btn" aria-label="Search" title="Search">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Checkboxes -->
+        <div class="filter-section">
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              id="hide-solved"
+              aria-label="Hide solved challenges"
+            />
+            <span>Hide Solved</span>
+          </label>
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              id="show-bookmarked"
+              aria-label="Show only bookmarked challenges"
+            />
+            <span>Show Bookmarked</span>
+          </label>
+          <label class="checkbox-label">
+            <input
+              type="checkbox"
+              id="show-assigned"
+              aria-label="Show only assigned challenges"
+            />
+            <span>Show Assigned</span>
+          </label>
+        </div>
+
+        <!-- Difficulty Filter -->
+        <div class="filter-section">
+          <h4>Difficulty</h4>
+          <div
+            class="filter-options"
+            role="group"
+            aria-label="Filter by difficulty"
+          >
+            <button
+              class="filter-btn active"
+              data-filter="difficulty"
+              data-value="all"
+            >
+              All Difficulties
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="difficulty"
+              data-value="easy"
+            >
+              Easy
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="difficulty"
+              data-value="medium"
+            >
+              Medium
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="difficulty"
+              data-value="hard"
+            >
+              Hard
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Filter -->
+        <div class="filter-section">
+          <h4>Category</h4>
+          <div
+            class="filter-options"
+            role="group"
+            aria-label="Filter by category"
+          >
+            <button
+              class="filter-btn active"
+              data-filter="category"
+              data-value="all"
+            >
+              All Categories
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="category"
+              data-value="Cryptography"
+            >
+              Cryptography
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="category"
+              data-value="Web Exploitation"
+            >
+              Web Exploitation
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="category"
+              data-value="Forensics"
+            >
+              Forensics
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="category"
+              data-value="Binary Exploitation"
+            >
+              Binary Exploitation
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="category"
+              data-value="Reverse Engineering"
+            >
+              Reverse Engineering
+            </button>
+            <button
+              class="filter-btn"
+              data-filter="category"
+              data-value="General Skills"
+            >
+              General Skills
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Close Button -->
+        <button class="sidebar-close" aria-label="Close filters">
+          <i class="fas fa-times"></i>
+        </button>
+      </aside>
+
+      <!-- CHALLENGES GRID AREA -->
+      <div class="challenges-area">
+        <!-- Loading State -->
+        <div class="loading-container" id="loading" style="display: none">
+          <div class="spinner"></div>
+          <p>Loading challenges...</p>
+        </div>
+
+        <!-- Challenges Grid -->
+        <div
+          class="challenges-grid"
+          id="challenges-grid"
+          role="region"
+          aria-label="Challenge cards"
+        >
+          <!-- Challenge cards will be inserted here by JavaScript -->
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="no-results" style="display: none">
+          <i class="fas fa-search"></i>
+          <h3>No challenges found</h3>
+          <p>Try adjusting your filters or search terms</p>
+          <button class="btn-secondary" onclick="app.clearAllFilters()">
+            Clear Filters
+          </button>
+        </div>
+
+        <!-- Pagination -->
+        <div
+          class="pagination"
+          id="pagination"
+          role="navigation"
+          aria-label="Pagination"
+        >
+          <!-- Pagination buttons will be inserted here by JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- CHALLENGE DETAIL MODAL -->
+    <div
+      class="modal-overlay"
+      id="challenge-modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+    >
+      <div class="modal-container">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <div class="modal-title-section">
+            <button class="back-btn" aria-label="Back to challenges">
+              <i class="fas fa-arrow-left"></i>
+              <span>Back to Challenges</span>
+            </button>
+            <h2 class="challenge-title" id="modal-title">Challenge Title</h2>
+            <div class="badges" id="modal-badges">
+              <!-- Badges will be inserted here -->
+            </div>
+          </div>
+          <button class="close-btn" aria-label="Close modal">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body" id="modal-body">
+          <!-- Challenge stats will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div
+      class="toast-container"
+      id="toast-container"
+      role="region"
+      aria-label="Notifications"
+      aria-live="polite"
+    ></div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/challenges.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/router.js"></script>
+  </body>
+</html>

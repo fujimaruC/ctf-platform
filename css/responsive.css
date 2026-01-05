@@ -1,0 +1,508 @@
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* ============================================
+   TABLET (768px - 1199px)
+   ============================================ */
+
+@media (max-width: 1199px) {
+  .challenges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-sidebar {
+    width: 240px;
+  }
+
+  .modal-container {
+    max-width: 90vw;
+  }
+
+  .nav-links a:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+/* ============================================
+   MOBILE (<768px)
+   ============================================ */
+
+@media (max-width: 767px) {
+  /* Layout */
+  .main-content {
+    flex-direction: column;
+  }
+
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .challenges-area {
+    padding: var(--spacing-md);
+  }
+
+  /* Navigation */
+  .nav-left {
+    gap: var(--spacing-md);
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  /* Filter Sidebar */
+  .filter-sidebar {
+    position: fixed;
+    left: 0;
+    top: 108px;
+    bottom: 0;
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    z-index: var(--z-dropdown);
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    transform: translateX(-100%);
+    transition: transform var(--transition-base) ease-out;
+    max-height: calc(100vh - 108px);
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.5);
+  }
+
+  .filter-sidebar.active {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: block;
+  }
+
+  /* Modal */
+  .modal-container {
+    max-width: 100%;
+    max-height: 95vh;
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md);
+  }
+
+  .modal-header {
+    padding: var(--spacing-md);
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .modal-title-section > h2 {
+    font-size: 20px;
+  }
+
+  .close-btn {
+    align-self: flex-end;
+  }
+
+  .modal-body {
+    padding: var(--spacing-md);
+    gap: var(--spacing-lg);
+  }
+
+  /* Challenge Meta */
+  .challenge-meta {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .bookmark-btn {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Pagination */
+  .pagination {
+    gap: var(--spacing-xs);
+  }
+
+  .page-dots {
+    display: none;
+  }
+
+  .page-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (<480px)
+   ============================================ */
+
+@media (max-width: 479px) {
+  /* Layout */
+  .main-content {
+    margin-top: 108px;
+  }
+
+  .challenges-area {
+    padding: var(--spacing-sm);
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 14px;
+  }
+
+  /* Top Nav */
+  .nav-container {
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .nav-right {
+    gap: var(--spacing-sm);
+  }
+
+  .user-menu {
+    display: none;
+  }
+
+  .notification-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Secondary Nav */
+  .secondary-nav .container {
+    gap: var(--spacing-md);
+    padding: 0 var(--spacing-md);
+  }
+
+  .tab span {
+    display: none;
+  }
+
+  .tab {
+    padding: var(--spacing-md);
+  }
+
+  /* Filter Sidebar */
+  .filter-sidebar {
+    max-width: 100%;
+  }
+
+  /* Challenges */
+  .challenge-card {
+    padding: var(--spacing-md);
+  }
+
+  .card-header {
+    gap: var(--spacing-sm);
+  }
+
+  .challenge-title {
+    font-size: 14px;
+  }
+
+  .stat-item {
+    font-size: 12px;
+  }
+
+  /* Modal */
+  .modal-overlay {
+    padding: var(--spacing-sm);
+  }
+
+  .modal-container {
+    max-height: calc(100vh - 20px);
+    border-radius: var(--radius-md);
+  }
+
+  .modal-header {
+    padding: var(--spacing-md);
+  }
+
+  .modal-title-section > h2 {
+    font-size: 18px;
+  }
+
+  .back-btn span {
+    display: none;
+  }
+
+  .back-btn {
+    font-size: 16px;
+  }
+
+  .badges {
+    gap: var(--spacing-xs);
+  }
+
+  .category-badge,
+  .difficulty-badge,
+  .points-badge {
+    font-size: 10px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .modal-body {
+    padding: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  /* Code Block */
+  .code-block {
+    padding: var(--spacing-md);
+  }
+
+  .code-block code {
+    font-size: 12px;
+  }
+
+  .copy-btn {
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  /* Hints */
+  .hint-header {
+    padding: var(--spacing-sm);
+  }
+
+  .unlock-hint-btn {
+    font-size: 11px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  /* Input Group */
+  .input-prefix,
+  .input-suffix {
+    padding: var(--spacing-sm);
+    font-size: 12px;
+  }
+
+  .flag-input {
+    padding: var(--spacing-sm) 0;
+    font-size: 13px;
+  }
+
+  /* Buttons */
+  .submit-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+  }
+
+  /* Pagination */
+  .page-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  /* Content Sections */
+  .content-section h3 {
+    font-size: 14px;
+  }
+
+  /* Challenge Meta */
+  .challenge-meta {
+    padding: var(--spacing-md);
+  }
+
+  .meta-item {
+    font-size: 12px;
+  }
+
+  .bookmark-btn {
+    font-size: 12px;
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION (Mobile)
+   ============================================ */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .top-nav {
+    height: 56px;
+  }
+
+  .secondary-nav {
+    height: 44px;
+  }
+
+  .main-content {
+    margin-top: 100px;
+  }
+
+  .filter-sidebar {
+    top: 100px;
+  }
+
+  .modal-container {
+    max-height: 90vh;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   DARK MODE (Already applied by default)
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+  /* Already using dark theme as default */
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: more) {
+  :root {
+    --border-color: #404854;
+    --text-secondary: #a0a8b0;
+  }
+
+  .challenge-card {
+    border-width: 2px;
+  }
+
+  button:focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .top-nav,
+  .secondary-nav,
+  .filter-sidebar,
+  .pagination,
+  .close-btn,
+  .back-btn {
+    display: none;
+  }
+
+  .challenges-area {
+    margin: 0;
+    padding: 0;
+  }
+
+  .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .challenge-card {
+    page-break-inside: avoid;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+  }
+}
+
+/* ============================================
+   GRID ADJUSTMENTS
+   ============================================ */
+
+@media (min-width: 1600px) {
+  .challenges-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 1200px) {
+  .filter-sidebar {
+    width: 260px;
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .challenges-area {
+    padding: var(--spacing-lg);
+  }
+
+  .filter-sidebar {
+    width: 220px;
+    padding: var(--spacing-md);
+  }
+
+  .filter-sidebar h3 {
+    font-size: 14px;
+  }
+
+  .filter-section {
+    margin-bottom: var(--spacing-md);
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+
+@media (hover: none) and (pointer: coarse) {
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .filter-btn,
+  .page-btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .challenge-card:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+  }
+
+  /* Remove hover states on touch devices */
+  .challenge-card:hover {
+    transform: none;
+  }
+
+  .modal-overlay .copy-btn {
+    opacity: 1;
+  }
+}

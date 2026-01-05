@@ -1,0 +1,584 @@
+{
+  "challenges": [
+    {
+      "id": "crypto_001",
+      "title": "Caesar's Secret",
+      "category": "Cryptography",
+      "difficulty": "easy",
+      "points": 150,
+      "description": "Julius Caesar used a simple cipher to encrypt his messages. Can you decrypt this one?\n\nThe encrypted message is hidden in the code block below. Try shifting each letter by a small number to find the original message.",
+      "flag": "flag{hello_world}",
+      "encryptedMessage": "KHOOR ZRUOG",
+      "hints": [
+        {
+          "text": "Try shifting each letter by a certain number. Start with small values like 1, 2, or 3.",
+          "penalty": 10
+        },
+        {
+          "text": "The shift value is 3. This is known as ROT3 in cryptography.",
+          "penalty": 15
+        },
+        {
+          "text": "The decrypted message starts with 'HELLO'...",
+          "penalty": 20
+        }
+      ],
+      "files": [],
+      "solves": 2341,
+      "successRate": 78,
+      "avgTime": 8,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "crypto_002",
+      "title": "ROT13 Mystery",
+      "category": "Cryptography",
+      "difficulty": "easy",
+      "points": 150,
+      "description": "ROT13 is a simple letter substitution cipher that replaces a letter with the 13th letter after it in the alphabet. Decrypt the message below to find the flag.\n\nEncrypted: PNYF PBQ PZGRE PZG PNYF",
+      "flag": "flag{cats_cod_cyber_cat_cats}",
+      "encryptedMessage": "PNYF PBQ PZGRE PZG PNYF",
+      "hints": [
+        {
+          "text": "ROT13 means rotating by 13 positions. Applying it twice gives the original text.",
+          "penalty": 10
+        },
+        {
+          "text": "The first word after decryption is 'CATS'",
+          "penalty": 15
+        }
+      ],
+      "files": [],
+      "solves": 1892,
+      "successRate": 85,
+      "avgTime": 5,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "web_001",
+      "title": "SQL Injection 101",
+      "category": "Web Exploitation",
+      "difficulty": "medium",
+      "points": 200,
+      "description": "There's a vulnerable login form that doesn't properly sanitize user inputs. Can you find a way to bypass the authentication?\n\nHint: Try entering something like: admin' OR '1'='1\n\nThis is a classic SQL injection vulnerability. In a real scenario, you'd be testing against a database query.",
+      "flag": "flag{sql_injection_ftw}",
+      "hints": [
+        {
+          "text": "SQL injection exploits improperly filtered user input in SQL queries.",
+          "penalty": 10
+        },
+        {
+          "text": "Look for patterns that break out of the SQL query string, like using quotes or logical operators.",
+          "penalty": 15
+        },
+        {
+          "text": "The classic payload: admin' OR '1'='1 works because it makes the WHERE clause always true.",
+          "penalty": 20
+        }
+      ],
+      "files": [],
+      "solves": 892,
+      "successRate": 45,
+      "avgTime": 15,
+      "solved": true,
+      "bookmarked": false
+    },
+    {
+      "id": "web_002",
+      "title": "Cookie Monster",
+      "category": "Web Exploitation",
+      "difficulty": "easy",
+      "points": 100,
+      "description": "A web application stores user authentication tokens in cookies without proper encryption. Inspect the browser cookies and find the flag hidden there.\n\nIn a real scenario, you'd use browser developer tools to inspect cookies.",
+      "flag": "flag{cookies_are_tasty}",
+      "hints": [
+        {
+          "text": "Open your browser's Developer Tools (F12 or Ctrl+Shift+I)",
+          "penalty": 10
+        },
+        {
+          "text": "Look under the 'Storage' or 'Application' tab",
+          "penalty": 15
+        },
+        {
+          "text": "Check the Cookies section for this domain",
+          "penalty": 10
+        }
+      ],
+      "files": [],
+      "solves": 3421,
+      "successRate": 92,
+      "avgTime": 3,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "forensics_001",
+      "title": "Hidden Messages",
+      "category": "Forensics",
+      "difficulty": "medium",
+      "points": 250,
+      "description": "A file contains hidden data in the metadata or file header. Can you extract it?\n\nThis challenge teaches you about file forensics and data extraction techniques. Tools like exiftool or strings can be useful here.",
+      "flag": "flag{metadata_tells_stories}",
+      "hints": [
+        {
+          "text": "Use the 'strings' command on the file to extract readable text",
+          "penalty": 10
+        },
+        {
+          "text": "Metadata in images often contains EXIF data. Try using exiftool.",
+          "penalty": 15
+        },
+        {
+          "text": "Sometimes data is hidden in file headers or between sections",
+          "penalty": 20
+        }
+      ],
+      "files": [
+        {
+          "name": "mystery.txt",
+          "url": "#",
+          "size": "2.4 KB"
+        }
+      ],
+      "solves": 456,
+      "successRate": 38,
+      "avgTime": 22,
+      "solved": false,
+      "bookmarked": true
+    },
+    {
+      "id": "forensics_002",
+      "title": "File Carving",
+      "category": "Forensics",
+      "difficulty": "hard",
+      "points": 400,
+      "description": "A corrupted disk image contains fragments of deleted files. Can you recover and reconstruct them?\n\nFile carving is a technique to extract files from raw data without relying on file system information.",
+      "flag": "flag{carved_and_recovered}",
+      "hints": [
+        {
+          "text": "Learn about file signatures/magic numbers (e.g., PNG starts with 89 50 4E 47)",
+          "penalty": 20
+        },
+        {
+          "text": "Use tools like Foremost or Scalpel for automated file carving",
+          "penalty": 25
+        },
+        {
+          "text": "Look for common file headers in the raw data",
+          "penalty": 30
+        }
+      ],
+      "files": [
+        {
+          "name": "disk_image.bin",
+          "url": "#",
+          "size": "10.2 MB"
+        }
+      ],
+      "solves": 123,
+      "successRate": 15,
+      "avgTime": 45,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "binary_001",
+      "title": "Buffer Overflow Basics",
+      "category": "Binary Exploitation",
+      "difficulty": "hard",
+      "points": 350,
+      "description": "A C program has a classic buffer overflow vulnerability. Can you overflow the buffer and overwrite the return address to execute arbitrary code?\n\nThis is a fundamental binary exploitation technique. You'll need to understand memory layout and stack frames.",
+      "flag": "flag{buffer_pwned}",
+      "hints": [
+        {
+          "text": "Buffer overflows occur when more data is written to a buffer than it can hold.",
+          "penalty": 15
+        },
+        {
+          "text": "The return address is stored on the stack. Overwrite it to jump to your code.",
+          "penalty": 25
+        },
+        {
+          "text": "Use tools like GDB to debug and find the offset to the return address.",
+          "penalty": 30
+        }
+      ],
+      "files": [
+        {
+          "name": "vulnerable.c",
+          "url": "#",
+          "size": "1.5 KB"
+        },
+        {
+          "name": "vulnerable",
+          "url": "#",
+          "size": "8.9 KB"
+        }
+      ],
+      "solves": 67,
+      "successRate": 8,
+      "avgTime": 120,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "binary_002",
+      "title": "Format String Attack",
+      "category": "Binary Exploitation",
+      "difficulty": "medium",
+      "points": 280,
+      "description": "A vulnerable program uses user input directly in a printf-like format string. Craft a format string to read memory and leak the flag.",
+      "flag": "flag{format_string_leak}",
+      "hints": [
+        {
+          "text": "Format strings use specifiers like %x, %s, %n for different purposes.",
+          "penalty": 15
+        },
+        {
+          "text": "%x reads a value from the stack, %s reads a string from memory",
+          "penalty": 20
+        },
+        {
+          "text": "The flag might be stored in an environment variable or on the stack.",
+          "penalty": 25
+        }
+      ],
+      "files": [],
+      "solves": 234,
+      "successRate": 22,
+      "avgTime": 35,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "reverse_001",
+      "title": "Crackme: Simple",
+      "category": "Reverse Engineering",
+      "difficulty": "easy",
+      "points": 150,
+      "description": "A simple binary checks if a password is correct. Use a disassembler or debugger to find the correct password and extract the flag.",
+      "flag": "flag{password_found}",
+      "hints": [
+        {
+          "text": "Use tools like Ghidra, IDA, or Radare2 to disassemble the binary.",
+          "penalty": 10
+        },
+        {
+          "text": "Look for string comparisons - the password might be hardcoded.",
+          "penalty": 15
+        },
+        {
+          "text": "The password is: 'SuperSecret123'",
+          "penalty": 25
+        }
+      ],
+      "files": [
+        {
+          "name": "crackme",
+          "url": "#",
+          "size": "12.3 KB"
+        }
+      ],
+      "solves": 1876,
+      "successRate": 73,
+      "avgTime": 12,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "reverse_002",
+      "title": "Decompile Me",
+      "category": "Reverse Engineering",
+      "difficulty": "medium",
+      "points": 250,
+      "description": "Reverse engineer this compiled binary to understand its logic and find the correct input that produces the desired output.",
+      "flag": "flag{logic_understood}",
+      "hints": [
+        {
+          "text": "The binary performs a mathematical operation on the input",
+          "penalty": 15
+        },
+        {
+          "text": "Try different numeric inputs and observe the output pattern",
+          "penalty": 20
+        },
+        {
+          "text": "The operation is: multiply input by 7 and add 42",
+          "penalty": 25
+        }
+      ],
+      "files": [
+        {
+          "name": "binary",
+          "url": "#",
+          "size": "9.8 KB"
+        }
+      ],
+      "solves": 542,
+      "successRate": 35,
+      "avgTime": 28,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "general_001",
+      "title": "Welcome to CTF",
+      "category": "General Skills",
+      "difficulty": "easy",
+      "points": 50,
+      "description": "Welcome to Capture The Flag! This is your first challenge. Simply read the instructions and submit the flag.\n\nFlags are usually in the format: flag{something_here}\n\nThis challenge teaches you how to navigate the platform.",
+      "flag": "flag{welcome_to_ctf}",
+      "hints": [
+        {
+          "text": "The flag is always in the format: flag{...}",
+          "penalty": 0
+        },
+        {
+          "text": "Read this challenge description carefully",
+          "penalty": 0
+        },
+        {
+          "text": "The flag for this challenge is: flag{welcome_to_ctf}",
+          "penalty": 0
+        }
+      ],
+      "files": [],
+      "solves": 15234,
+      "successRate": 99,
+      "avgTime": 1,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "general_002",
+      "title": "Command Line Basics",
+      "category": "General Skills",
+      "difficulty": "easy",
+      "points": 100,
+      "description": "Learn to use the command line! Navigate directories, read files, and find the hidden flag.\n\nTry using commands like: ls, cd, cat, grep\n\nLocate the flag file and submit it.",
+      "flag": "flag{command_line_master}",
+      "hints": [
+        {
+          "text": "Use 'ls' to list files in a directory",
+          "penalty": 10
+        },
+        {
+          "text": "Use 'cat' to read file contents",
+          "penalty": 10
+        },
+        {
+          "text": "Look for a file named 'flag.txt' or similar",
+          "penalty": 10
+        }
+      ],
+      "files": [],
+      "solves": 9876,
+      "successRate": 88,
+      "avgTime": 6,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "general_003",
+      "title": "Python Scripting",
+      "category": "General Skills",
+      "difficulty": "medium",
+      "points": 200,
+      "description": "Write a Python script to solve a problem and find the flag.\n\nYou need to process a dataset and extract information. Python basics like loops, conditionals, and string manipulation will be useful.",
+      "flag": "flag{python_power}",
+      "hints": [
+        {
+          "text": "Start by reading and parsing the input data",
+          "penalty": 10
+        },
+        {
+          "text": "Look for a pattern in the data",
+          "penalty": 15
+        },
+        {
+          "text": "The solution involves counting occurrences and filtering results",
+          "penalty": 20
+        }
+      ],
+      "files": [
+        {
+          "name": "data.txt",
+          "url": "#",
+          "size": "5.3 KB"
+        }
+      ],
+      "solves": 3456,
+      "successRate": 61,
+      "avgTime": 18,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "crypto_003",
+      "title": "XOR is Fun",
+      "category": "Cryptography",
+      "difficulty": "medium",
+      "points": 200,
+      "description": "XOR (exclusive OR) is a fundamental operation in cryptography. Given an encrypted message and the XOR key, decrypt it to find the flag.",
+      "flag": "flag{xor_rocks}",
+      "encryptedMessage": "1e0d05060c000a1b0f001601",
+      "hints": [
+        {
+          "text": "XOR is its own inverse: A XOR B XOR B = A",
+          "penalty": 10
+        },
+        {
+          "text": "The encrypted data is in hexadecimal",
+          "penalty": 15
+        },
+        {
+          "text": "Try XOR-ing with small single-byte keys first",
+          "penalty": 20
+        }
+      ],
+      "files": [],
+      "solves": 678,
+      "successRate": 52,
+      "avgTime": 14,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "web_003",
+      "title": "Path Traversal",
+      "category": "Web Exploitation",
+      "difficulty": "medium",
+      "points": 200,
+      "description": "A web application allows downloading files but doesn't properly validate file paths. Use path traversal to access files outside the intended directory.",
+      "flag": "flag{traversed_success}",
+      "hints": [
+        {
+          "text": "Path traversal uses patterns like '../' to go up directories",
+          "penalty": 15
+        },
+        {
+          "text": "Try accessing files like /etc/passwd on Linux systems",
+          "penalty": 20
+        },
+        {
+          "text": "The vulnerable parameter might be: file=../../secret.txt",
+          "penalty": 25
+        }
+      ],
+      "files": [],
+      "solves": 445,
+      "successRate": 41,
+      "avgTime": 20,
+      "solved": false,
+      "bookmarked": true
+    },
+    {
+      "id": "forensics_003",
+      "title": "Memory Dump Analysis",
+      "category": "Forensics",
+      "difficulty": "hard",
+      "points": 350,
+      "description": "Analyze a memory dump to find artifacts and extract the flag. Memory forensics requires understanding how data is stored in RAM.",
+      "flag": "flag{memory_forensics}",
+      "hints": [
+        {
+          "text": "Use Volatility framework for memory analysis",
+          "penalty": 20
+        },
+        {
+          "text": "Look for running processes and network connections",
+          "penalty": 25
+        },
+        {
+          "text": "Search for strings in the memory dump that might contain the flag",
+          "penalty": 30
+        }
+      ],
+      "files": [
+        {
+          "name": "memory.dmp",
+          "url": "#",
+          "size": "512 MB"
+        }
+      ],
+      "solves": 89,
+      "successRate": 12,
+      "avgTime": 60,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "binary_003",
+      "title": "Return Oriented Programming",
+      "category": "Binary Exploitation",
+      "difficulty": "hard",
+      "points": 400,
+      "description": "Advanced exploitation technique using gadgets (short code sequences) to build a chain. This challenge demonstrates ROP exploitation.",
+      "flag": "flag{rop_chain_success}",
+      "hints": [
+        {
+          "text": "ROP uses existing code (gadgets) to execute arbitrary actions",
+          "penalty": 25
+        },
+        {
+          "text": "Find gadgets using tools like ROPgadget or Ropper",
+          "penalty": 30
+        },
+        {
+          "text": "Build a chain of gadgets that calls system() with your command",
+          "penalty": 35
+        }
+      ],
+      "files": [
+        {
+          "name": "binary",
+          "url": "#",
+          "size": "16.2 KB"
+        }
+      ],
+      "solves": 34,
+      "successRate": 3,
+      "avgTime": 180,
+      "solved": false,
+      "bookmarked": false
+    },
+    {
+      "id": "reverse_003",
+      "title": "Keygen Challenge",
+      "category": "Reverse Engineering",
+      "difficulty": "hard",
+      "points": 350,
+      "description": "Reverse engineer a serial number verification algorithm and generate a valid key.",
+      "flag": "flag{keygen_master}",
+      "hints": [
+        {
+          "text": "The algorithm likely uses mathematical operations on the serial number",
+          "penalty": 20
+        },
+        {
+          "text": "Look for patterns in valid/invalid serial numbers",
+          "penalty": 25
+        },
+        {
+          "text": "The key might involve checksum or hash-based validation",
+          "penalty": 30
+        }
+      ],
+      "files": [
+        {
+          "name": "license_checker",
+          "url": "#",
+          "size": "18.7 KB"
+        }
+      ],
+      "solves": 156,
+      "successRate": 18,
+      "avgTime": 50,
+      "solved": false,
+      "bookmarked": false
+    }
+  ]
+}
